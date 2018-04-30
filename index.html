@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy7niYo3hKVoLoxDPCbZqRZWG_x7jml4k&callback=initMap"></script>
+    <title>travel web</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-title">
+                <h1>高雄旅遊資訊</h1>
+            </div>
+            <div class="select">
+                <form>
+                    <select class="AR" id="ARId" name="AdministrativeRegion">
+                        <option value="none">-- 請選擇行政區 --</option>
+                    </select>
+                </form>
+            </div>
+            <div class="header-hotAR">
+                <div class="header-hotAR-title">熱門行政區</div>
+                <ul class="header-hotAR-list" id="hotARList">
+                    <li>
+                        <input type="button" class="header-hotAR-list-li purple" value="苓雅區">
+                    </li>
+                    <li>
+                        <input type="button" class="header-hotAR-list-li pink" value="三民區">
+                    </li>
+                    <li>
+                        <input type="button" class="header-hotAR-list-li yellow" value="新興區">
+                    </li>
+                    <li>
+                        <input type="button" class="header-hotAR-list-li blue" value="鼓山區">
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="content">
+            <div id="map"></div>
+            <div class="content-downline">
+                <span class="fa-stack ">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-caret-down fa-stack-2x "></i>
+                </span>
+            </div>
+            <div class="totalList">
+                <div class="list-title" id="listTitle"></div>
+                <ul class="list" id="list">
+                </ul>
+            </div>
+
+        </section>
+        <footer class="footer">
+            <h2>高雄旅遊網</h2>
+            <h3>資料來源：高雄市政府 </h3>
+    </div>
+    </footer>
+    <div class="scrollTop" id="scrollTopId" style="display:none;"><img src="https://raw.githubusercontent.com/00qage/travel/master/images/btn_goTop.png" alt=""></div>
+    </div>
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="js/all.js"></script>
+</body>
+
+</html>
