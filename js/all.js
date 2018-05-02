@@ -50,7 +50,12 @@ function hotarea(e) {
   if (e.target.nodeName !== 'INPUT') {
     return;
   }
-  
+  // 清除資料
+  for (i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
+  }
+  markers = [];
+
   updatedList(e);
 }
 
@@ -87,19 +92,19 @@ function loadData(lat, lng, title) {
   markers.push(marker);
 }
 //變更地區，並進行監聽
-function changeArea(e){
+function changeArea(e) {
   // 清除資料
-  for(i=0;i<markers.length;i++){
-    markers[i].setMap(null);   
+  for (i = 0; i < markers.length; i++) {
+    markers[i].setMap(null);
   }
-   markers = []; 
-   infoWindows = [];
-   // 載入資料
-   for(var i=0;data.length>i;i++){
-      if(data[i].Zone== e.target.value){
-        loadData(data[i].Py,data[i].Px,data[i].Picdescribe1)
-      }
+  markers = [];
+  infoWindows = [];
+  // 載入資料
+  for (var i = 0; data.length > i; i++) {
+    if (data[i].Zone == e.target.value) {
+      loadData(data[i].Py, data[i].Px, data[i].Picdescribe1)
     }
+  }
 }
 
 
@@ -124,7 +129,7 @@ function updatedList(e) {
         .replace('{Tel}', data[i].Tel)
         .replace('{Website}', data[i].Website == '' ? '#' : data[i].Website);
 
-        //產生標記在此執行
+      //產生標記在此執行
       loadData(data[i].Py, data[i].Px, data[i].Picdescribe1)
     }
   }
